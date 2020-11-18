@@ -1,2 +1,2 @@
 # go_samples
-GOF, Leetcode etc. Written in Golang!
+Gof, Leetcode etc. Written in Golang!
