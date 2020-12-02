@@ -22,3 +22,10 @@ func TestSlice(t *testing.T) {
 	t.Logf("%p", &a)
 	t.Logf("%p", &part)
 }
+
+func TestBasicOperation(t *testing.T) {
+	i := 1
+	j := 1
+	i += j + 2
+	t.Log(i)
+}
