@@ -30,7 +30,6 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	m1 := l
 	m2 := mid - l
 	// num1[m1 -1] 和 num2[m2 -1] 的最大值
-	// num1[m1] 和 num2[m2] 的最小值
 	var min1 int
 	var min2 int
 	// 边界条件
@@ -51,6 +50,7 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 		return c1
 	}
 	// 如果是偶数
+	// num1[m1] 和 num2[m2] 的最小值
 	var max1 int
 	var max2 int
 	if m1 >= n1 {
