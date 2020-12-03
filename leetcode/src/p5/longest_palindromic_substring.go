@@ -1,6 +1,7 @@
 package p5
 
 //  最长回文子字符串 动态规划
+// 切片初始化不是很优雅
 func longestPalindrome(s string) string {
 	var n = len(s)
 	if n <= 0 {
@@ -8,6 +9,7 @@ func longestPalindrome(s string) string {
 	}
 	// 动态规划 -- 初始化dp  dp[i][j] = true 表示
 	//start at i and end at j 是有效的
+	// WARNING: 一开始不熟悉make用法， 这样一直append切片对应的数组不断扩容，效率很低
 	var dp [][]bool
 	for i := 0; i < n; i++ {
 		dp = append(dp, []bool{})
