@@ -61,13 +61,11 @@ func mergeTwoList(l1 *ListNode, l2 *ListNode) *ListNode {
 			temp = temp.Next
 		}
 	}
-	for l1 != nil {
+	if l1 != nil {
 		temp.Next = l1
-		break
 	}
-	for l2 != nil {
+	if l2 != nil {
 		temp.Next = l2
-		break
 	}
 	return result.Next
 }
