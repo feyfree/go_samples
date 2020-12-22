@@ -5,7 +5,7 @@ func searchInsert(nums []int, target int) int {
 	if n == 0 {
 		return 0
 	}
-	// 二分查找 first item > target 当前的index
+	// 二分查找 first item >= target 当前的index
 	start := 0
 	end := n - 1
 	for start <= end {
