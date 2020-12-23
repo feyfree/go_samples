@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package p37
 
 type mark struct {
 	row [9][9]bool
@@ -41,23 +39,20 @@ func fill(board [][]byte, r int, c int, m *mark) bool {
 	}
 	for i := '1'; i <= '9'; i++ {
 		boxNo := r/3*3 + c/3
-		if !m.row[r][i-'1'] && !m.col[c][i-'1'] && !m.box[boxNo][i-'1'] {
-			m.row[r][i-'1'] = true
-			m.col[c][i-'1'] = true
-			m.box[boxNo][i-'1'] = true
+		value := i - '1'
+		if !m.row[r][value] && !m.col[c][value] && !m.box[boxNo][value] {
+			m.row[r][value] = true
+			m.col[c][value] = true
+			m.box[boxNo][value] = true
 			board[r][c] = byte(i)
 			if fill(board, nextR, nextC, m) {
 				return true
 			}
 			board[r][c] = '.'
-			m.row[r][i-'1'] = false
-			m.col[c][i-'1'] = false
-			m.box[boxNo][i-'1'] = false
+			m.row[r][value] = false
+			m.col[c][value] = false
+			m.box[boxNo][value] = false
 		}
 	}
 	return false
-}
-
-func main() {
-	fmt.Print(int('1'))
 }
