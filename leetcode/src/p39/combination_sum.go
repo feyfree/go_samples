@@ -1,7 +1,6 @@
-package main
+package p39
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -10,15 +9,15 @@ func combinationSum(candidates []int, target int) [][]int {
 	var result [][]int
 	var current []int
 	for n := 1; n <= target/candidates[0]; n++ {
-		dfs(candidates, target, 0, 0, n, &current, &result)
+		dfs(candidates, target, 0, 0, n, current, &result)
 	}
 	return result
 }
 
-func dfs(candidates []int, target int, s int, d int, n int, current *[]int, result *[][]int) {
+func dfs(candidates []int, target int, s int, d int, n int, current []int, result *[][]int) {
 	if d == n {
 		if target == 0 {
-			*result = append(*result, *current)
+			*result = append(*result, append([]int(nil), current...))
 			return
 		}
 	}
@@ -26,13 +25,7 @@ func dfs(candidates []int, target int, s int, d int, n int, current *[]int, resu
 		if candidates[i] > target {
 			break
 		}
-		*current = append(*current, candidates[i])
-		dfs(candidates, target-candidates[i], i, d+1, n, current, result)
-		*current = (*current)[:len(*current)-1]
+		// 这个地方有点坑 需要注意一下
+		dfs(candidates, target-candidates[i], i, d+1, n, append(current, candidates[i]), result)
 	}
-}
-
-func main() {
-	data := []int{2, 3, 6, 7}
-	fmt.Print(combinationSum(data, 7))
 }
