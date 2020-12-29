@@ -14,6 +14,7 @@ func combinationSum(candidates []int, target int) [][]int {
 	return result
 }
 
+// slice 可以认为是一个结构体, 里面包含了一个数组的指针
 func dfs(candidates []int, target int, s int, d int, n int, current []int, result *[][]int) {
 	if d == n {
 		if target == 0 {
