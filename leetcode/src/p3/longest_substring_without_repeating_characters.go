@@ -11,7 +11,7 @@ func lengthOfLongestSubstring(s string) int {
 	// 返回的结果
 	result := 0
 	// last index of each character
-	// here we user 256 as character set total num
+	// here we use 256 as character set total num
 	lastIndexArray := [256]int{}
 	for i := range lastIndexArray {
 		lastIndexArray[i] = -1

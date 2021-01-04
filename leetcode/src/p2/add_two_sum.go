@@ -16,8 +16,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		tempSum := l1.Val + l2.Val + flag
 		tempResult := tempSum % 10
 		flag = tempSum / 10
-		data := &ListNode{}
-		data.Val = tempResult
+		data := &ListNode{Val: tempResult}
 		tempHead.Next = data
 		l1 = l1.Next
 		l2 = l2.Next
@@ -27,8 +26,7 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		tempSum := l1.Val + flag
 		tempResult := tempSum % 10
 		flag = tempSum / 10
-		data := &ListNode{}
-		data.Val = tempResult
+		data := &ListNode{Val: tempResult}
 		tempHead.Next = data
 		l1 = l1.Next
 		tempHead = tempHead.Next
@@ -37,15 +35,13 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		tempSum := l2.Val + flag
 		tempResult := tempSum % 10
 		flag = tempSum / 10
-		data := &ListNode{}
-		data.Val = tempResult
+		data := &ListNode{Val: tempResult}
 		tempHead.Next = data
 		l2 = l2.Next
 		tempHead = tempHead.Next
 	}
 	if flag == 1 {
-		data := &ListNode{}
-		data.Val = 1
+		data := &ListNode{Val: flag}
 		tempHead.Next = data
 	}
 	return result.Next
