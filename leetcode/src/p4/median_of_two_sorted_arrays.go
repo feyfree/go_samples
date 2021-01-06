@@ -14,9 +14,9 @@ func findMedianSortedArrays(nums1 []int, nums2 []int) float64 {
 	l := 0
 	r := n1
 	for l < r {
-		// 二分法定位 m1 的位置
+		// 二分法定位 m1 的位置 需要注意的是 m1肯定不会越界
 		m1 := l + (r-l)/2
-		// m2 的位置
+		// m2 的位置 可能越界
 		m2 := mid - m1
 		// 第一个数组取少了
 		if nums1[m1] < nums2[m2-1] {

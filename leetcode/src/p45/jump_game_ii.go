@@ -1,8 +1,10 @@
-package p45
+package main
 
 import "math"
 
 // 贪心解法
+// Runtime: 12 ms
+// Memory Usage: 5.1 MB
 func jump(nums []int) int {
 	// 需要跳跃的步数
 	steps := 0
