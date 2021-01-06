@@ -1,8 +1,7 @@
-package main
+package p45
 
 import (
 	"container/list"
-	"fmt"
 )
 
 // Runtime: 256 ms
@@ -34,9 +33,4 @@ func bfs(nums []int, marked []bool, dist []int) {
 			}
 		}
 	}
-}
-
-func main() {
-	nums := []int{2, 3, 1, 1, 4}
-	fmt.Println(solution(nums))
 }
