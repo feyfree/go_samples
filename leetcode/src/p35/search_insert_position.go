@@ -19,7 +19,7 @@ func searchInsert(nums []int, target int) int {
 			start = mid + 1
 		}
 	}
-	return end
+	return end + 1
 }
 
 //func main() {
